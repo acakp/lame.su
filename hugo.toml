@@ -1,0 +1,4 @@
+baseURL = 'https://lame.su/articles/'
+languageCode = 'ru-ru'
+title = 'lame.su'
+theme = 'xmin'
