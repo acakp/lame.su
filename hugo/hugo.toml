@@ -1,0 +1,12 @@
+baseURL = "https://lame.su/"
+languageCode = "ru-ru"
+title = "lame.su"
+theme = "hugo-bearblog"
+
+enableRobotsTXT = true
+dateFormat = "2006-01-02"
+disableKinds = ["taxonomy", "home"]
+
+# for image linking in posts
+markup.goldmark.renderHooks.image.useEmbedded="fallback"
+markup.goldmark.renderHooks.link.useEmbedded="fallback"
