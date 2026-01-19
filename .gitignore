@@ -32,3 +32,8 @@ go.work.sum
 # .vscode/
 
 *.db
+
+# hugo
+hugo/public
+hugo/.hugo_build.lock
+hugo/hugo_stats.json
