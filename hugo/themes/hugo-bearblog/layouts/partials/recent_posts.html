@@ -1,0 +1,15 @@
+<p>недавние посты</p>
+<ul class="blog-posts">
+  {{ range first 5 (where .Site.RegularPages "Type" "blog") }}
+  <li>
+    <span>
+      <i>
+        <time datetime='{{ .Date.Format "2006-01-02" }}'>
+          {{ .Date.Format (default "2006-01-02" .Site.Params.dateFormat) }}
+        </time>
+      </i>
+    </span>
+    <a href="{{ .Permalink }}">{{ .Title }}</a>
+  </li>
+  {{ end }}
+</ul>

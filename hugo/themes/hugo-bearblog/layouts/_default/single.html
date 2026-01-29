@@ -1,0 +1,26 @@
+{{ define "main" }}
+{{ if eq .Type "blog" }}{{ if not .Params.menu }}
+<h1>{{ .Title }}</h1>
+{{ end }}{{ end }}
+<content>
+  {{ .Content }}
+</content>
+
+<p style="text-align: right;">
+  <i>
+    <time datetime='{{ .Date.Format "2006-01-02" }}'>
+      {{ .Date.Format (default "2006-01-02" .Site.Params.dateFormat) }}
+    </time>
+  </i>
+</p>
+
+{{ if eq .Type "blog" }}{{ if (.Param "enablePostNavigator")}}
+{{- partial "post_navigator.html" . -}}
+{{ end }}{{ end }}
+
+<p>
+  {{ range (.GetTerms "tags") }}
+  <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+  {{ end }}
+</p>
+{{ end }}
